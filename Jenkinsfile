@@ -3,10 +3,10 @@ pipeline {
 
     stages {
         stage('Hello') {
-        agent {
-            docker {
-                image 'node:18-alpine'
-                reuseNote true
+            agent {
+                docker {
+                    image 'node:18-alpine'
+                    reuseNode true
                 }
         }
             steps {
@@ -20,10 +20,6 @@ pipeline {
                 """
             }
         }
-        stage("test by yanan") {
-            steps {
-                echo "Hello yanan"
-                }
         }
     }
 }
